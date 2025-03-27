@@ -19,10 +19,8 @@ export class UserService {
       console.log("stating init")
       await this.fetchUser();
       await this.fetchUsers();
-      setTimeout(()=>{
-        this.initSubject.next(true);
+      this.initSubject.next(true);
       console.log("initialized")
-      },3500)
       
     } catch (error) {
       console.error("error in init", error);

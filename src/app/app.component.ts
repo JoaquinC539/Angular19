@@ -5,10 +5,11 @@ import { ScreenLoaderComponent } from './components/screen-loader/screen-loader.
 import { UserService } from './services/user-service.service';
 import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { MenuTabsComponent } from './components/menu-tabs/menu-tabs.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, ScreenLoaderComponent,CommonModule],
+  imports: [RouterOutlet, HeaderComponent, ScreenLoaderComponent,CommonModule,MenuTabsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
