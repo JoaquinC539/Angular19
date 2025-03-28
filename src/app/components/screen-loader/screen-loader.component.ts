@@ -11,8 +11,6 @@ export class ScreenLoaderComponent implements OnChanges{
   _loading:boolean=false;
 
   constructor(){
-   
-    this.init()
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -21,7 +19,5 @@ export class ScreenLoaderComponent implements OnChanges{
         this._loading=changes["loading"].currentValue;
       }
   }
-  init(){
-    console.log(this.loading)
-  }
+  
 }
