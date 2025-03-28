@@ -19,8 +19,11 @@ export class UserService {
       console.log("stating init")
       await this.fetchUser();
       await this.fetchUsers();
-      this.initSubject.next(true);
-      console.log("initialized")
+      setTimeout(()=>{
+        this.initSubject.next(true);
+      console.log("initialized");
+      },500)
+      
       
     } catch (error) {
       console.error("error in init", error);
@@ -36,7 +39,7 @@ export class UserService {
   private async fetchUsers(): Promise<void> {
 
     
-    const data: any = await firstValueFrom(this.http.get("https://reqres.in/api/users/2"));
+    const data: any = await firstValueFrom(this.http.get("https://reqres.in/api/users?page=2"));
     this.usersList = data["data"];
   }
   public getUser() {

@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row ">
+        <div class="d-flex justify-content-center">
+            <p>My data:</p>
+        </div>
+        
+    </div>
+    
+    <hr>
+    <div class="row">
+        <div class="d-flex justify-content-center">
+            <table class="table table-striped">
+                <thead>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Description</th>
+                </thead>
+                <tbody>
+                    @for (user of data; track $index) {
+                        <tr>
+                            <td class="text-center">
+                                {{user["id"]}}
+                            </td>
+                            <td class="text-center">
+                                {{user["name"]}}
+                            </td>
+                            <td class="text-center">
+                                {{user["description"]}}
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <button (click)="updateUsers()"> Update Users</button>
+    </div>
+</div>
+<app-screen-loader [loading]="loading"></app-screen-loader>

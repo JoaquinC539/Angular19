@@ -23,9 +23,6 @@ export class AppComponent implements OnInit,OnDestroy {
 
   constructor(private userService: UserService) {
     this.loading=true;
-
-  }
-  ngOnInit(): void {
     this.sub= this.userService.initialized.subscribe((isInit) => {
       console.log("isInit",isInit)
       if (isInit) {
@@ -33,6 +30,10 @@ export class AppComponent implements OnInit,OnDestroy {
       }
     }
     )
+
+  }
+  ngOnInit(): void {
+    
   }
   ngOnDestroy(): void {
       this.sub?.unsubscribe();
