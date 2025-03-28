@@ -7,19 +7,21 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
   styleUrl: './screen-loader.component.scss'
 })
 export class ScreenLoaderComponent implements OnChanges{
-  @Input() loading:boolean; 
-  _loading:boolean;
+  @Input() loading:boolean=false; 
+  _loading:boolean=false;
 
   constructor(){
-    this.loading=false;
-    this._loading=false;
+   
+    this.init()
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    console.log("change")
       if(changes["loading"]){
         this._loading=changes["loading"].currentValue;
       }
   }
-
-
+  init(){
+    console.log(this.loading)
+  }
 }
