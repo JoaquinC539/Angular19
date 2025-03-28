@@ -6,10 +6,11 @@ import { UserService } from './services/user-service.service';
 import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { MenuTabsComponent } from './components/menu-tabs/menu-tabs.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, ScreenLoaderComponent,CommonModule,MenuTabsComponent],
+  imports: [RouterOutlet, HeaderComponent, ScreenLoaderComponent,CommonModule,MenuTabsComponent,FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

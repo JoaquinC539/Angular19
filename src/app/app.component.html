@@ -1,17 +1,18 @@
 <title>{{title}}</title>
 @if(loading ){
-  <app-screen-loader [loading]="loading"></app-screen-loader>
+<app-screen-loader [loading]="loading"></app-screen-loader>
 }@else {
 <div class="content">
-  <app-header></app-header>
-  <app-menu-tabs></app-menu-tabs>
+  <div>
+    <app-header style="width: 100%;"></app-header>
+    <app-menu-tabs></app-menu-tabs>
+  </div>
   <hr>
-  <div class="content-wrapper">
-    content
+  <div class="content-wrapper" style="min-height: 40rem;padding-top: 15px;padding: 5px; margin-top: auto;">    
     <router-outlet></router-outlet>
   </div>
+  <br>
+  <app-footer></app-footer>
 
 </div>
 }
-
-
