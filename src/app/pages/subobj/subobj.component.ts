@@ -1,7 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { ScreenLoaderComponent } from '../../components/screen-loader/screen-loader.component';
-import { data, SubobjService } from '../../services/subobj.service';
-import { error } from 'console';
+import {  SubobjService } from '../../services/subobj.service';
 import { Subscription } from 'rxjs';
 
 @Component({

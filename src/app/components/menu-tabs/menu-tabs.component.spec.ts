@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MenuTabsComponent } from './menu-tabs.component';
+import { ActivatedRoute } from '@angular/router';
 
 describe('MenuTabsComponent', () => {
   let component: MenuTabsComponent;
@@ -8,7 +9,10 @@ describe('MenuTabsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MenuTabsComponent]
+      imports: [MenuTabsComponent],
+      providers:[
+        {provide:ActivatedRoute,useValue:{}}
+      ]
     })
     .compileComponents();
 

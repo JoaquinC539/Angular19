@@ -9,14 +9,11 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  
-
   public user:string
 
   constructor(private userService:UserService){
     this.user=`${userService.getUser()["first_name"]} ${userService.getUser()["last_name"]}` 
   }
-
   handleLogOut(){
     console.log("loggout...")
   }
