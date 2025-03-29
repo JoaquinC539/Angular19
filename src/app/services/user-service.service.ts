@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, signal } from '@angular/core';
-import { BehaviorSubject, firstValueFrom, Observable, Subject } from 'rxjs';
+import { Injectable} from '@angular/core';
+import { BehaviorSubject, firstValueFrom, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -37,8 +37,6 @@ export class UserService {
 
   }
   private async fetchUsers(): Promise<void> {
-
-    
     const data: any = await firstValueFrom(this.http.get("https://reqres.in/api/users?page=2"));
     this.usersList = data["data"];
   }

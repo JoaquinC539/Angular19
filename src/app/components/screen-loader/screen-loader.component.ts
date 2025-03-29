@@ -14,7 +14,6 @@ export class ScreenLoaderComponent implements OnChanges{
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("change")
       if(changes["loading"]){
         this._loading=changes["loading"].currentValue;
       }

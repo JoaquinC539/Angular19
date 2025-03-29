@@ -27,7 +27,6 @@ export class SignalService {
   async init (){
     const data=await this.fetchUser();
      this.data.set(data);
-     console.log("signal data",this.data())
   }
   updateData(data:{[key:string]:string|number|boolean}[]){
     setTimeout(()=>{
