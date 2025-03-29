@@ -13,6 +13,7 @@ class MockUserService {
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
+  let compiled:HTMLElement;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -27,10 +28,20 @@ describe('HeaderComponent', () => {
 
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
+    compiled=fixture.nativeElement;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it("should log logout when logout clicked",()=>{
+    spyOn(console,"log");
+    component.handleLogOut();
+    expect(console.log).toHaveBeenCalled()    
+  })
+  it("should see user in screen",()=>{
+    const name=compiled.querySelector("#userName");
+    expect(name?.textContent).toBe(" Test User ")
+  })
 });
