@@ -28,7 +28,11 @@ describe('AppComponent', () => {
     userService=TestBed.inject(UserService);
     httpmock=TestBed.inject(HttpTestingController);
     fakeAsync(()=>{
-      httpmock.expectOne("https://reqres.in/api/users/2").flush({data:{}})
+      // httpmock.expectOne("https://reqres.in/api/users/2").flush({data:{}})
+      httpmock.expectOne({
+        method:"GET",
+        url:"https://reqres.in/api/users/2"
+      }).flush({data:{}})
       tick();
       httpmock.expectOne('https://reqres.in/api/users?page=2').flush({ data: [] });
     })
